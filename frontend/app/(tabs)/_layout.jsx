@@ -6,7 +6,7 @@ import { StatusBar } from "expo-status-bar";
 const TabIcon = ({ name, color, focused }) => {
   return focused ? (
     <View className="items-center">
-      <Text className="text-orange-500 font-bold">
+      <Text className="text-[#000] font-bold">
         {name === "home-outline"
           ? "Home"
           : name === "heart-outline"
@@ -32,13 +32,13 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: "#B98025",
-          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarActiveTintColor: "#000",
+          tabBarInactiveTintColor: "#fff",
           tabBarStyle: {
             borderTopWidth: 0,
             shadowColor: "rgba(0, 0, 0, 0.1)",
             height: 70,
-            backgroundColor: "#000000",
+            backgroundColor: "#845744",
           },
         }}
       >

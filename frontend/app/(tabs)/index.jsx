@@ -14,13 +14,13 @@ const Home = () => {
 
   return (
     <>
-      <ScrollView className="relative sbg-black">
+      <ScrollView className="relative bg-[#EDE7D7]">
         <View className="pt-14 px-4">
           <SearchBar />
-          <Text className="text-white text-4xl font-bold mt-8">
+          <Text className="text-whsite text-4xl font-bold mt-8">
             Good Morning
           </Text>
-          <Text className="text-white text-sm font-bold">
+          <Text className="text-s text-sm font-bold">
             Grab your favorite coffee : {")"}
           </Text>
           <View className="mt-8">
@@ -28,10 +28,11 @@ const Home = () => {
           </View>
         </View>
         <FlatList
+          className="mt-8"
           showsHorizontalScrollIndicator={false}
           data={data}
           horizontal
-          keyExtractor={(item) => item.id} 
+          keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <CoffeeCard
               name={item.name}
@@ -47,7 +48,7 @@ const Home = () => {
           )}
         />
 
-        <StatusBar backgroundColor="#000000" style="light" />
+        <StatusBar backgroundColor="#000000" style="auto" />
       </ScrollView>
     </>
   );

@@ -13,7 +13,7 @@ const Categories = () => {
         <TouchableOpacity
           key={index}
           className={`py-2 px-3 rounded-xl items-center justify-center mr-2 flex-row ${
-            selectedCategory === index ? "bg-orange-400" : "bg-[#141921]"
+            selectedCategory === index ? "bg-[#845744]" : "bg-[#141921]"
           }`}
           activeOpacity={0.6}
           onPress={() => setSelectedCategory(index)}
