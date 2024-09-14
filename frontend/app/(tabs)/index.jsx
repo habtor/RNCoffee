@@ -1,7 +1,5 @@
 import { View, Text, ScrollView, FlatList } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import SearchBar from "../../components/searchBar";
 import Catergories from "../../components/categories";
 import CoffeeCard from "../../components/coffeeCard";
@@ -48,7 +46,7 @@ const Home = () => {
           )}
         />
 
-        <StatusBar backgroundColor="#000000" style="auto" />
+        <StatusBar style="auto" />
       </ScrollView>
     </>
   );
