@@ -12,6 +12,7 @@ const Cart = () => {
         <View className="">
           <CartItem />
           <CartItem />
+          
         </View>
         <View className="items-center px-6">
           <View className="w-full  border-[1px] border-slate-500 rounded-full mt-5"></View>
@@ -30,7 +31,7 @@ const Cart = () => {
           </View>
         </View>
 
-        <View className=" items-center">
+        <View className=" items-center mb-5">
           <TouchableOpacity
             activeOpacity={0.6}
             className="bg-[#845744] h-16 w-11/12 items-center justify-center rounded-xl mt-5"

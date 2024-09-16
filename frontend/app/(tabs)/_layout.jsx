@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { StatusBar } from "expo-status-bar";
+import { View, Text } from "react-native";
 
-const TabIcon = ({ name, color, focused }) => {
-  return focused ? (
+// Define Tab Icon component
+const TabIcon = ({ name, color, focused }) =>
+  focused ? (
     <View className="items-center">
       <Text className="text-[#fff] font-bold">
         {name === "home-outline"
@@ -20,74 +20,70 @@ const TabIcon = ({ name, color, focused }) => {
       <View className="bg-white h-1 w-1 rounded-full mt-1"></View>
     </View>
   ) : (
-    <View>
-      <Ionicons name={name} size={24} color={color} />
-    </View>
+    <Ionicons name={name} size={24} color={color} />
   );
-};
 
+// Tab Layout Definition
 const TabsLayout = () => {
   return (
-    <>
-      <Tabs
-        screenOptions={{
-          tabBarShowLabel: false,
-          tabBarActiveTintColor: "#fff",
-          tabBarInactiveTintColor: "#fff",
-          tabBarStyle: {
-            borderTopWidth: 0,
-            shadowColor: "rgba(0, 0, 0, 0.1)",
-            height: 70,
-            backgroundColor: "#845744",
-          },
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: "#fff",
+        tabBarInactiveTintColor: "#fff",
+        tabBarStyle: {
+          borderTopWidth: 0,
+          shadowColor: "rgba(0, 0, 0, 0.1)",
+          height: 70,
+          backgroundColor: "#845744",
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Home",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon name="home-outline" color={color} focused={focused} />
+          ),
         }}
-      >
-        <Tabs.Screen
-          name="index"
-          options={{
-            title: "Home",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon name="home-outline" color={color} focused={focused} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="favorite"
-          options={{
-            title: "Favorite",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon name="heart-outline" color={color} focused={focused} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="cart"
-          options={{
-            title: "Bag",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon
-                name="bag-handle-outline"
-                color={color}
-                focused={focused}
-              />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="profile"
-          options={{
-            title: "Profile",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon name="person-outline" color={color} focused={focused} />
-            ),
-          }}
-        />
-      </Tabs>
-    </>
+      />
+      <Tabs.Screen
+        name="favorite"
+        options={{
+          title: "Favorite",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon name="heart-outline" color={color} focused={focused} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="cart"
+        options={{
+          title: "Bag",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon
+              name="bag-handle-outline"
+              color={color}
+              focused={focused}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <TabIcon name="person-outline" color={color} focused={focused} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 };
 

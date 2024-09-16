@@ -1,53 +1,12 @@
-import React, { createContext, useState, useEffect } from "react";
-import * as SecureStore from "expo-secure-store";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import * as SecureStore from "expo-secure-store";
 
-export const AuthContext = createContext();
+interface AuthProps {
+  authState?: { token: string | null, authenticated: boolean | null };
 
-export const AuthProvider = ({ children }) => {
-  const [userToken, setUserToken] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  onRegister?: (email: string, password: string) => Promise<any>;
+  onLogin?: (email: string, password: string) => Promise<any>;
 
-  const login = async (username, password) => {
-    setIsLoading(true);
-    try {
-      const res = await axios.post("http://localhost:3000/login", {
-        username,
-        password,
-      });
-      await SecureStore.setItemAsync("token", res.data.token);
-      setUserToken(res.data.token);
-    } catch (error) {
-      console.log("Login failed", error);
-    }
-    setIsLoading(false);
-  };
-
-  const logout = async () => {
-    setIsLoading(true);
-    await SecureStore.deleteItemAsync("token");
-    setUserToken(null);
-    setIsLoading(false);
-  };
-
-  const isLoggedIn = async () => {
-    try {
-      const token = await SecureStore.getItemAsync("token");
-      if (token) {
-        setUserToken(token);
-      }
-    } catch (e) {
-      console.log("Error fetching token", e);
-    }
-  };
-
-  useEffect(() => {
-    isLoggedIn();
-  }, []);
-
-  return (
-    <AuthContext.Provider value={{ login, logout, userToken, isLoading }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+  onLogout?: () => Promise<any>;
+}
