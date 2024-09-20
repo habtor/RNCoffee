@@ -3,7 +3,7 @@ import React from "react";
 
 const Favourite = () => {
   return (
-    <View>
+    <View className="" >
       <Text>Favourite</Text>
     </View>
   );

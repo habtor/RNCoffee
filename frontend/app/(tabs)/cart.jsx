@@ -39,7 +39,7 @@ const Cart = () => {
             <Text className="text-white text-lg font-bold">Checkout</Text>
           </TouchableOpacity>
         </View>
-        <StatusBar backgroundColor="#000" style="light" />
+        {/* <StatusBar backgroundColor="#000" style="light" /> */}
       </ScrollView>
     </>
   );

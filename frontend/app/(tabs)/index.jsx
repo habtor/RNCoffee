@@ -30,7 +30,7 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           data={data}
           horizontal
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item._id} // Make sure id is a string
           renderItem={({ item }) => (
             <CoffeeCard
               name={item.name}
