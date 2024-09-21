@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 // Define Tab Icon component
 const TabIcon = ({ name, color, focused }) =>
@@ -28,7 +29,7 @@ const TabIcon = ({ name, color, focused }) =>
 const TabsLayout = () => {
   return (
     <>
-      <StatusBar backgroundColor="#000000" style="light" />
+      {/* <StatusBar backgroundColor="#000000" style="light" /> */}
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
