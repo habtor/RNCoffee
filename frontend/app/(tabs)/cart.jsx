@@ -5,7 +5,7 @@ import CartItem from "../../components/cartItem";
 const Cart = () => {
   return (
     <>
-      <ScrollView className="bg-[#EDE7D7] ">
+      <ScrollView className="">
         <View className="p-2">
           <Text className="text-3xl text-center font-bold mt-8">Cart</Text>
         </View>

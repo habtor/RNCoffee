@@ -13,7 +13,7 @@ const TabIcon = ({ name, color, focused }) =>
           : name === "heart-outline"
           ? "Favorite"
           : name === "bag-handle-outline"
-          ? "Bag"
+          ? "Cart"
           : name === "person-outline"
           ? "Profile"
           : ""}
@@ -65,7 +65,7 @@ const TabsLayout = () => {
         <Tabs.Screen
           name="cart"
           options={{
-            title: "Bag",
+            title: "Cart",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon

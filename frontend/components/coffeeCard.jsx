@@ -1,8 +1,18 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Feather from "@expo/vector-icons/Feather";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
-const CoffeeCard = ({ name, addon, image, price, rating, numReviews }) => {
+const CoffeeCard = ({
+  name,
+  addon,
+  image,
+  price,
+  rating,
+  numReviews,
+  onPress,
+  inCart,
+}) => {
   return (
     <View className="flex m-2 border-[1px] border-slate-400 rounded-3xl bg-[#FAF7EF]">
       <View className=" items-center justify-center h-44 w-60 p-2 rounded-t-3xl">
@@ -25,8 +35,12 @@ const CoffeeCard = ({ name, addon, image, price, rating, numReviews }) => {
             </View>
           </View>
           <View className="flex-row items-center pr-3">
-            <TouchableOpacity activeOpacity={0.6}>
-              <Feather name="heart" size={24} color="black" />
+            <TouchableOpacity activeOpacity={0.6} onPress={onPress}>
+              {!inCart ? (
+                <Feather name="heart" size={24} color="black" />
+              ) : (
+                <AntDesign name="heart" size={24} color="red" />
+              )}
             </TouchableOpacity>
           </View>
         </View>
