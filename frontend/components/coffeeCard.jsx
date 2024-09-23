@@ -14,7 +14,10 @@ const CoffeeCard = ({
   inCart,
 }) => {
   return (
-    <View className="flex m-2 border-[1px] border-slate-400 rounded-3xl bg-[#FAF7EF]">
+    <View
+      className="flex m-2 bordser-[1px] borsder-slate-400 rounded-3xl bg-[#ffffff] "
+      style={styles.shadow}
+    >
       <View className=" items-center justify-center h-44 w-60 p-2 rounded-t-3xl">
         <Image
           source={{ uri: image }}
@@ -57,5 +60,13 @@ const CoffeeCard = ({
     </View>
   );
 };
-
+const styles = {
+  shadow: {
+    shadowColor: "#000", // iOS shadow color
+    shadowOffset: { width: 0, height: 2 }, // iOS shadow offset
+    shadowOpacity: 0.50, // iOS shadow opacity
+    shadowRadius: 1.84, // iOS shadow radius
+    elevation: 5, // Android elevation for shadow
+  },
+};
 export default CoffeeCard;
