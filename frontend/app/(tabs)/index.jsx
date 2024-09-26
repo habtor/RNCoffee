@@ -27,9 +27,9 @@ const Home = () => {
 
   return (
     <>
-      <ScrollView className="relative bg-[#000000]">
+      <ScrollView className=" bg-[#000000] h-full">
         {/* Top Section */}
-        <View className="pt-14 px-4 h-full bg-black">
+        <View className="pt-14 px-4 relative h-[50vh]  bg-red-400">
           <SearchBar />
           <Text className="text-white text-4xl font-bold mt-8">
             Good Morning
@@ -40,60 +40,54 @@ const Home = () => {
           <View className="mt-8">
             <Catergories />
           </View>
+          <View className=" absolute bottom-[-96] ">
+            <FlatList
+              className=""
+              showsHorizontalScrollIndicator={false}
+              data={data}
+              horizontal
+              keyExtractor={(item) => item._id}
+              renderItem={({ item }) => (
+                <CoffeeCard
+                  name={item.name}
+                  addon={item.addon}
+                  image={item.image}
+                  description={item.description}
+                  price={item.price}
+                  size={item.size}
+                  rating={item.rating}
+                  numReviews={item.numReviews}
+                  count={item.count}
+                  onPress={() => handleToggleCart(item)}
+                  inCart={isInCart(item._id)}
+                />
+              )}
+            />
+          </View>
         </View>
 
-        {/* Middle Section - Floating FlatList */}
-        <View className="relative z-20">
-          <FlatList
-            className="absolute w-full bottom-[-96] z-10"
-            showsHorizontalScrollIndicator={false}
-            data={data}
-            horizontal
-            keyExtractor={(item) => item._id}
-            renderItem={({ item }) => (
-              <CoffeeCard
-                name={item.name}
-                addon={item.addon}
-                image={item.image}
-                description={item.description}
-                price={item.price}
-                size={item.size}
-                rating={item.rating}
-                numReviews={item.numReviews}
-                count={item.count}
-                onPress={() => handleToggleCart(item)}
-                inCart={isInCart(item._id)}
-              />
-            )}
-          />
-        </View>
-
-        {/* Bottom Section */}
-        <View className="px-4 pt-56  bg-[#ffffff]"></View>
-        <View className=" ">
-          <FlatList
-            className="absolute w-full bottom-[-96] z-10"
-            showsHorizontalScrollIndicator={false}
-            data={data}
-            horizontal
-            keyExtractor={(item) => item._id}
-            renderItem={({ item }) => (
-              <CoffeeCard
-                name={item.name}
-                addon={item.addon}
-                image={item.image}
-                description={item.description}
-                price={item.price}
-                size={item.size}
-                rating={item.rating}
-                numReviews={item.numReviews}
-                count={item.count}
-                onPress={() => handleToggleCart(item)}
-                inCart={isInCart(item._id)}
-              />
-            )}
-          />
-        </View>
+        <View className="px-4 pt-6  mt-56  bg-[#fff53b]"><FlatList
+              className=""
+              showsHorizontalScrollIndicator={false}
+              data={data}
+              horizontal
+              keyExtractor={(item) => item._id}
+              renderItem={({ item }) => (
+                <CoffeeCard
+                  name={item.name}
+                  addon={item.addon}
+                  image={item.image}
+                  description={item.description}
+                  price={item.price}
+                  size={item.size}
+                  rating={item.rating}
+                  numReviews={item.numReviews}
+                  count={item.count}
+                  onPress={() => handleToggleCart(item)}
+                  inCart={isInCart(item._id)}
+                />
+              )}
+            /></View>
 
         <StatusBar backgroundColor="#000" style="light" />
       </ScrollView>
