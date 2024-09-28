@@ -27,67 +27,43 @@ const Home = () => {
 
   return (
     <>
-      <ScrollView className=" bg-[#000000] h-full">
+      <ScrollView className=" bg-[#ffffff] h-full">
         {/* Top Section */}
-        <View className="pt-14 px-4 relative h-[50vh]  bg-red-400">
+        <View className="pt- px-4 relative">
           <SearchBar />
-          <Text className="text-white text-4xl font-bold mt-8">
+          <Text className="text-wshite text-4xl font-bold mt-8">
             Good Morning
           </Text>
-          <Text className="text-white text-sm font-bold">
+          <Text className="text-wshite text-sm font-bold">
             Grab your favorite coffee :)
           </Text>
           <View className="mt-8">
             <Catergories />
           </View>
-          <View className=" absolute bottom-[-96] ">
-            <FlatList
-              className=""
-              showsHorizontalScrollIndicator={false}
-              data={data}
-              horizontal
-              keyExtractor={(item) => item._id}
-              renderItem={({ item }) => (
-                <CoffeeCard
-                  name={item.name}
-                  addon={item.addon}
-                  image={item.image}
-                  description={item.description}
-                  price={item.price}
-                  size={item.size}
-                  rating={item.rating}
-                  numReviews={item.numReviews}
-                  count={item.count}
-                  onPress={() => handleToggleCart(item)}
-                  inCart={isInCart(item._id)}
-                />
-              )}
-            />
-          </View>
         </View>
 
-        <View className="px-4 pt-6  mt-56  bg-[#fff53b]"><FlatList
-              className=""
-              showsHorizontalScrollIndicator={false}
-              data={data}
-              horizontal
-              keyExtractor={(item) => item._id}
-              renderItem={({ item }) => (
-                <CoffeeCard
-                  name={item.name}
-                  addon={item.addon}
-                  image={item.image}
-                  description={item.description}
-                  price={item.price}
-                  size={item.size}
-                  rating={item.rating}
-                  numReviews={item.numReviews}
-                  count={item.count}
-                  onPress={() => handleToggleCart(item)}
-                  inCart={isInCart(item._id)}
-                />
-              )}
-            /></View>
+        <FlatList
+          className=""
+          showsHorizontalScrollIndicator={false}
+          data={data}
+          horizontal
+          keyExtractor={(item) => item._id}
+          renderItem={({ item }) => (
+            <CoffeeCard
+              name={item.name}
+              addon={item.addon}
+              image={item.image}
+              description={item.description}
+              price={item.price}
+              size={item.size}
+              rating={item.rating}
+              numReviews={item.numReviews}
+              count={item.count}
+              onPress={() => handleToggleCart(item)}
+              inCart={isInCart(item._id)}
+            />
+          )}
+        />
 
         <StatusBar backgroundColor="#000" style="light" />
       </ScrollView>
