@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <ScrollView className=" bg-[#ffffff] h-full">
+      <ScrollView className="h-full mt-10">
         {/* Top Section */}
         <View className="pt- px-4 relative">
           <SearchBar />

@@ -4,6 +4,7 @@ import CoffeeCard from "../../components/coffeeCard";
 import { Swipeable } from "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import FavCard from "../../components/favCard";
 
 const Favourite = () => {
   const { cart, addToCart, removeFromCart } = useCart();
@@ -28,7 +29,7 @@ const Favourite = () => {
                 </TouchableOpacity>
               )}
             >
-              <CoffeeCard
+              <FavCard
                 name={item.name}
                 addon={item.addon}
                 image={item.image}
