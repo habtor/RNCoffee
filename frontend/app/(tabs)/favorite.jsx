@@ -1,5 +1,5 @@
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import { useCart } from "../../contexts/cart";
+import { useFav } from "../../contexts/fav";
 import CoffeeCard from "../../components/coffeeCard";
 import { Swipeable } from "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -7,7 +7,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import FavCard from "../../components/favCard";
 
 const Favourite = () => {
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { fav, addToFav, removeFromFav } = useFav();
 
   return (
     <GestureHandlerRootView>
@@ -16,14 +16,14 @@ const Favourite = () => {
         <FlatList
           className="mt-8"
           showsHorizontalScrollIndicator={false}
-          data={cart}
+          data={fav}
           keyExtractor={(item) => item._id}
           renderItem={({ item }) => (
             <Swipeable
               renderRightActions={() => (
                 <TouchableOpacity
                   className="w-24 h-full items-center justify-center"
-                  onPress={() => removeFromCart(item)}
+                  onPress={() => removeFromFav(item)}
                 >
                   <Ionicons name="trash-outline" size={40} color="red" />
                 </TouchableOpacity>

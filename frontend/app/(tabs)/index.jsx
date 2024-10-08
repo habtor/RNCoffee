@@ -4,21 +4,21 @@ import SearchBar from "../../components/searchBar";
 import Catergories from "../../components/categories";
 import CoffeeCard from "../../components/coffeeCard";
 import useGetCoffee from "../../hooks/useGetCoffee";
-import { useCart } from "../../contexts/cart";
+import { useFav } from "../../contexts/fav";
 
 const Home = () => {
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { fav, addToFav, removeFromFav } = useFav();
   const { data, loading, error } = useGetCoffee();
 
-  const isInCart = (itemId) => {
-    return cart.some((cartItem) => cartItem._id === itemId);
+  const isInFav = (itemId) => {
+    return fav.some((favtItem) => favtItem._id === itemId);
   };
 
-  const handleToggleCart = (item) => {
-    if (isInCart(item._id)) {
-      removeFromCart(item);
+  const handleToggleFav = (item) => {
+    if (isInFav(item._id)) {
+      removeFromFav(item);
     } else {
-      addToCart(item);
+      addToFav(item);
     }
   };
 
@@ -59,8 +59,8 @@ const Home = () => {
               rating={item.rating}
               numReviews={item.numReviews}
               count={item.count}
-              onPress={() => handleToggleCart(item)}
-              inCart={isInCart(item._id)}
+              onPress={() => handleToggleFav(item)}
+              inCart={isInFav(item._id)}
             />
           )}
         />

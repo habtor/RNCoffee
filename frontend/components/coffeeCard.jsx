@@ -50,7 +50,7 @@ const CoffeeCard = ({
         <View className="flex-row items-end justify-between">
           <Text className="text-gray-800 font-bold text-2xl">${price}</Text>
           <TouchableOpacity
-            className="h-12 w-12 bg-[#845744] rounded-2xl items-center justify-center"
+            className="h-12 w-12 bg-black rounded-2xl items-center justify-center"
             activeOpacity={0.6}
           >
             <Text className="text-3xl text-white">+</Text>
@@ -64,7 +64,7 @@ const styles = {
   shadow: {
     shadowColor: "#000", // iOS shadow color
     shadowOffset: { width: 0, height: 2 }, // iOS shadow offset
-    shadowOpacity: 0.50, // iOS shadow opacity
+    shadowOpacity: 0.5, // iOS shadow opacity
     shadowRadius: 1.84, // iOS shadow radius
     elevation: 5, // Android elevation for shadow
   },
