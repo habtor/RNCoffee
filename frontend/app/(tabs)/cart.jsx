@@ -7,7 +7,7 @@ const Cart = () => {
     <>
       <ScrollView className="">
         <View className="p-2">
-          <Text className="text-3xl text-center font-bold mt-8">Cart</Text>
+          <Text className="text-3xl text-center font-bold mt-7">Cart</Text>
         </View>
         <View className="">
           <CartItem />
