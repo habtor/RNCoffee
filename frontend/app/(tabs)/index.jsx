@@ -5,9 +5,11 @@ import Catergories from "../../components/categories";
 import CoffeeCard from "../../components/coffeeCard";
 import useGetCoffee from "../../hooks/useGetCoffee";
 import { useFav } from "../../contexts/fav";
+import { useCart } from "../../contexts/cart";
 
 const Home = () => {
   const { fav, addToFav, removeFromFav } = useFav();
+  const { cart, addToCart } = useCart();
   const { data, loading, error } = useGetCoffee();
 
   const isInFav = (itemId) => {
@@ -20,6 +22,14 @@ const Home = () => {
     } else {
       addToFav(item);
     }
+  };
+
+  const handleToggleCart = (item) => {
+    addToCart(item);
+  };
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
   };
 
   if (loading) return <Text>Loading...</Text>;
@@ -59,7 +69,8 @@ const Home = () => {
               rating={item.rating}
               numReviews={item.numReviews}
               count={item.count}
-              onPress={() => handleToggleFav(item)}
+              onHeartPress={() => handleToggleFav(item)}
+              onCartPress={() => handleAddToCart(item)}
               inCart={isInFav(item._id)}
             />
           )}

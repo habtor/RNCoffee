@@ -1,23 +1,32 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 
-const CartItem = () => {
+const CartItem = ({
+  name,
+  addon,
+  image,
+  price,
+  count,
+  pressAddCount,
+  pressSubCount,
+}) => {
   return (
-    <View className="border-[1px] border-black m-2 rounded-2xl flex-row justify-between bg-[#FAF7EF]">
+    <View
+      className="m-2 rounded-2xl flex-row justify-between flex bg-[#ffffff]"
+      style={styles.shadow}
+    >
       <View className="flex-row">
         <View className="h-24 w-24 p-1">
           <Image
-            source={{
-              uri: "https://images.news18.com/ibnlive/uploads/2024/01/image-76-2024-01-c4b36ce27d9508ae9aa4b2f55a0b220f.jpg?impolicy=website&width=640&height=480",
-            }}
+            source={{ uri: image }}
             className="h-full w-full rounded-2xl"
             resizeMode="cover"
           />
         </View>
 
         <View className="p-2">
-          <Text className="text-lg font-bold">Cappuccino</Text>
-          <Text className="text-gray-700">Medium</Text>
-          <Text className="text-gray-700 font-bold text-lg">$4.99</Text>
+          <Text className="text-lg font-bold">{name}</Text>
+          <Text className="text-gray-700">{addon}</Text>
+          <Text className="text-gray-700 font-bold text-lg">${price}</Text>
         </View>
       </View>
 
@@ -25,13 +34,15 @@ const CartItem = () => {
         <TouchableOpacity
           activeOpacity={0.6}
           className="h-6 w-6 border-2 border-slate-700 rounded-md items-center justify-center"
+          onPress={pressSubCount}
         >
           <Text className="h-[2px] w-[14px] bg-black"></Text>
         </TouchableOpacity>
-        <Text className="mx-2 text-lg">2</Text>
+        <Text className="mx-2 text-lg">{count}</Text>
         <TouchableOpacity
           activeOpacity={0.6}
           className="h-6 w-6 border-2 border-slate-700 rounded-md items-center justify-center"
+          onPress={pressAddCount}
         >
           <View className="relative h-[2px] w-[14px] bg-black">
             <Text className="h-[2px] w-[14px] bg-black"></Text>
@@ -41,6 +52,16 @@ const CartItem = () => {
       </View>
     </View>
   );
+};
+
+const styles = {
+  shadow: {
+    shadowColor: "#000", // iOS shadow color
+    shadowOffset: { width: 0, height: 2 }, // iOS shadow offset
+    shadowOpacity: 0.5, // iOS shadow opacity
+    shadowRadius: 1.84, // iOS shadow radius
+    elevation: 5, // Android elevation for shadow
+  },
 };
 
 export default CartItem;

@@ -10,7 +10,8 @@ const CoffeeCard = ({
   price,
   rating,
   numReviews,
-  onPress,
+  onHeartPress,
+  onCartPress,
   inCart,
 }) => {
   return (
@@ -38,7 +39,7 @@ const CoffeeCard = ({
             </View>
           </View>
           <View className="flex-row items-center pr-3">
-            <TouchableOpacity activeOpacity={0.6} onPress={onPress}>
+            <TouchableOpacity activeOpacity={0.6} onPress={onHeartPress}>
               {!inCart ? (
                 <Feather name="heart" size={24} color="black" />
               ) : (
@@ -52,6 +53,7 @@ const CoffeeCard = ({
           <TouchableOpacity
             className="h-12 w-12 bg-black rounded-2xl items-center justify-center"
             activeOpacity={0.6}
+            onPress={onCartPress}
           >
             <Text className="text-3xl text-white">+</Text>
           </TouchableOpacity>
