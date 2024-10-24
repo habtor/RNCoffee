@@ -38,7 +38,7 @@ const CartItem = ({
         >
           <Text className="h-[2px] w-[14px] bg-black"></Text>
         </TouchableOpacity>
-        <Text className="mx-2 text-lg">{count}</Text>
+        <Text className="mx-2 text-lg">{!count ? 1 : count}</Text>
         <TouchableOpacity
           activeOpacity={0.6}
           className="h-6 w-6 border-2 border-slate-700 rounded-md items-center justify-center"

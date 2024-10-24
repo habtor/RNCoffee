@@ -8,17 +8,16 @@ import FavCard from "../../components/favCard";
 
 const Favourite = () => {
   const { fav, addToFav, removeFromFav } = useFav();
-  console.log(fav);
 
   return (
     <GestureHandlerRootView>
+      <Text className="text-3xl text-center font-bold mt-8">Favourite</Text>
       {!fav || fav.length === 0 ? (
         <Text className="text-3xl text-black text-center font-bold mt-24">
           You don't have favourites
         </Text>
       ) : (
         <View className="">
-          <Text className="text-3xl text-center font-bold mt-8">Favourite</Text>
           <FlatList
             className="mt-8"
             showsHorizontalScrollIndicator={false}
