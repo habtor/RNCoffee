@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import SearchBar from "../../components/searchBar";
 import Catergories from "../../components/categories";
 import CoffeeCard from "../../components/coffeeCard";
+import TodayDealCard from "../../components/todayDeal";
 import useGetCoffee from "../../hooks/useGetCoffee";
 import { useFav } from "../../contexts/fav";
 import { useCart } from "../../contexts/cart";
@@ -75,7 +76,30 @@ const Home = () => {
             />
           )}
         />
-
+        <Text className="text-xl ml-5 mt-8">Today's Deal</Text>
+        <FlatList
+          className=""
+          showsHorizontalScrollIndicator={false}
+          data={data}
+          horizontal
+          keyExtractor={(item) => item._id}
+          renderItem={({ item }) => (
+            <TodayDealCard
+              name={item.name}
+              addon={item.addon}
+              image={item.image}
+              description={item.description}
+              price={item.price}
+              size={item.size}
+              rating={item.rating}
+              numReviews={item.numReviews}
+              count={item.count}
+              onHeartPress={() => handleToggleFav(item)}
+              onCartPress={() => handleAddToCart(item)}
+              inCart={isInFav(item._id)}
+            />
+          )}
+        />
         <StatusBar backgroundColor="#000" style="light" />
       </ScrollView>
     </>
