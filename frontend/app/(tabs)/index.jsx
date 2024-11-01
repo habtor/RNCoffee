@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <>
-      <ScrollView className="h-full mt-10">
+      <ScrollView className="h-full mt-10 w-full">
         {/* Top Section */}
         <View className="pt- px-4 relative">
           <SearchBar />
@@ -94,7 +94,6 @@ const Home = () => {
               rating={item.rating}
               numReviews={item.numReviews}
               count={item.count}
-              onHeartPress={() => handleToggleFav(item)}
               onCartPress={() => handleAddToCart(item)}
               inCart={isInFav(item._id)}
             />
