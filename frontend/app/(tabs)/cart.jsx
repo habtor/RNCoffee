@@ -1,4 +1,10 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import CartItem from "../../components/cartCard";
 import { useCart } from "../../contexts/cart";
@@ -54,7 +60,7 @@ const Cart = () => {
 
   return (
     <GestureHandlerRootView>
-      <View className="p-2">
+      <View className="">
         <Text className="text-3xl text-center font-bold mt-7">Cart</Text>
       </View>
       {!cart || cart.length === 0 ? (
@@ -62,9 +68,9 @@ const Cart = () => {
           Your cart is empty
         </Text>
       ) : (
-        <>
+        <ScrollView className="h-full mt-5 w-full">
           <FlatList
-            className="mt-8"
+            className=""
             showsHorizontalScrollIndicator={false}
             data={cart}
             keyExtractor={(item) => item._id}
@@ -121,7 +127,7 @@ const Cart = () => {
               <Text className="text-white text-lg font-bold">Checkout</Text>
             </TouchableOpacity>
           </View>
-        </>
+        </ScrollView>
       )}
     </GestureHandlerRootView>
   );

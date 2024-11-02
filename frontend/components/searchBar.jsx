@@ -7,9 +7,8 @@ const SearchBar = () => {
       <View className="flex flex-row justify-between items-center">
         <View className="relative items-center justify-center w-full">
           <TextInput
-            className="w-full h-12 bg-[#FAF7EF] rounded-full px-4 text-black border border-gray-800"
+            className="w-full h-12 bg-[#ffffff] rounded-full px-4 text-black border border-gray-800"
             placeholder="Search coffee"
-            placeholderTextColor="orange"
           />
           <View className="absolute right-0 ">
             <TouchableOpacity
