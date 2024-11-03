@@ -1,13 +1,11 @@
 # Coffee-app 
 This application was developed to learn <a href="https://reactnative.dev/">`React-Native`</a> as practice to learn mobile app development.
 
-<div align=center>
-    <img  src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670446/app_suykjy.png">
-</div>
 
-<div align=center>
-    <img  src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670711/app3_ve7bu2.png">
-</div>
+
+
+ <img width="350" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670446/app_suykjy.png"> 
+ <img width="350" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670711/app3_ve7bu2.png"> 
 
 ## 1. Setup
 
