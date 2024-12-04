@@ -1,11 +1,8 @@
 # Coffee-app 
 This application was developed to learn <a href="https://reactnative.dev/">`React-Native`</a> as practice to learn mobile app development.
 
-
-
-
- <img width="350" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670446/app_suykjy.png"> 
- <img width="350" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670711/app3_ve7bu2.png"> 
+ <img width="300" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670446/app_suykjy.png"> 
+ <img width="300" src="https://res.cloudinary.com/domvgm4cs/image/upload/v1730670711/app3_ve7bu2.png"> 
 
 ## 1. Setup
 
@@ -26,7 +23,7 @@ To run the app you can run the following command in the main directory:
 
 - `npm start server`
 - then open another teminal and run the following command
-- `cd front;npx expo start -c`
+- `cd frontend;npx expo start -c`
 
 ## 2. Stack / external libraries
 
